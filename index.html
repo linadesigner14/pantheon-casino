@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PANTHEON — Casino of the Gods</title>
+<meta name="description" content="PANTHEON — concept casino landing page. Thunder Welcome Pack: 225% up to €1,500 + 200 Free Spins.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.webp">
+<style>
+:root{
+  --bg:#0c0826; --bg2:#160f3d; --panel:rgba(28,18,72,.72);
+  --ink:#f6f0ff; --muted:#b9b0dc; --gold:#f2c35a; --gold-d:#c8912e;
+  --violet:#6c3df0; --royal:#2d4bd8; --sky:#8fd3ff;
+  --radius:18px;
+  --gold-grad:linear-gradient(180deg,#fff6d2 0%,#ffd76a 35%,#e0a531 62%,#a8701a 100%);
+  --frame:linear-gradient(135deg,#fff3c4 0%,#d9a23a 22%,#7a4f10 40%,#f7d77a 58%,#b07a1e 78%,#fff0b0 100%);
+  --btn:linear-gradient(180deg,#fff0b0 0%,#ffcf4f 40%,#e59a1f 75%,#c97a12 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:clip}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+body.loading{overflow:hidden}
+img{display:block;max-width:100%}
+svg{display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.container{width:min(1200px,100% - 40px);margin-inline:auto}
+.gold-text{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.title-glow{filter:drop-shadow(0 2px 0 #6b3d08) drop-shadow(0 6px 18px rgba(0,0,0,.55))}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before,.eyebrow::after{content:"";width:34px;height:8px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 8'%3E%3Cpath d='M0 4h26' stroke='%23f2c35a' stroke-width='1.2'/%3E%3Cpath d='M30 0l4 4-4 4-4-4z' fill='%23f2c35a'/%3E%3C/svg%3E") no-repeat center/contain}
+.eyebrow::before{transform:scaleX(-1)}
+.h2{font-family:'Cinzel',serif;font-weight:900;font-size:clamp(32px,4.6vw,58px);line-height:1.04;margin:14px 0 18px}
+.lead{color:var(--muted);font-size:clamp(15px,1.4vw,18px);max-width:580px}
+section{position:relative}
+.section{padding:clamp(80px,10vw,130px) 0}
+.center{text-align:center}.center .lead{margin-inline:auto}
+:focus-visible{outline:2px solid var(--sky);outline-offset:3px;border-radius:8px}
+.meander{height:18px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='18' viewBox='0 0 36 18'%3E%3Cpath d='M0 15h6V3h18v9h-6V8h-6v7h24' fill='none' stroke='%23e0a531' stroke-width='2'/%3E%3C/svg%3E") repeat-x center/36px 18px;opacity:.85}
+
+/* Ornate frame */
+.frame{position:relative;border:3px solid transparent;border-radius:var(--radius);background:linear-gradient(180deg,rgba(40,24,98,.92),rgba(16,10,46,.96)) padding-box,var(--frame) border-box;box-shadow:0 0 0 1px rgba(0,0,0,.5),0 20px 50px -20px rgba(0,0,0,.8),inset 0 0 30px rgba(120,80,255,.18)}
+.frame::before,.frame::after{content:"";position:absolute;width:22px;height:22px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23fff3c4'/%3E%3Cstop offset='1' stop-color='%23b07a1e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M11 0l3 8 8 3-8 3-3 8-3-8-8-3 8-3z' fill='url(%23g)' stroke='%237a4f10' stroke-width='.6'/%3E%3C/svg%3E") no-repeat center/contain;z-index:4;filter:drop-shadow(0 0 6px rgba(255,210,100,.7))}
+.frame::before{top:-12px;left:-12px}.frame::after{bottom:-12px;right:-12px}
+
+/* Buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 34px;border-radius:14px;font-family:'Cinzel',serif;font-weight:900;font-size:17px;letter-spacing:.06em;transition:box-shadow .3s,transform .2s,filter .3s;will-change:transform;white-space:nowrap;text-transform:uppercase}
+.btn-gold{background:var(--btn);color:#3a1d00;text-shadow:0 1px 0 rgba(255,240,200,.6);box-shadow:0 0 0 2px #7a4f10,0 0 0 4px rgba(255,220,130,.35),inset 0 2px 0 rgba(255,255,255,.7),inset 0 -4px 0 rgba(120,60,0,.35),0 14px 30px -8px rgba(255,170,40,.7);overflow:hidden}
+.btn-gold::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.85) 48%,transparent 62%);transform:translateX(-120%);animation:shine 3.4s ease-in-out infinite}
+.btn-gold:hover{filter:brightness(1.08);box-shadow:0 0 0 2px #7a4f10,0 0 0 4px rgba(255,220,130,.5),inset 0 2px 0 rgba(255,255,255,.7),inset 0 -4px 0 rgba(120,60,0,.35),0 18px 44px -6px rgba(255,170,40,.95),0 0 60px rgba(255,190,70,.6)}
+.btn-gold:active{transform:scale(.97)}
+.btn-violet{background:linear-gradient(180deg,#8a6bff,#5a33d6 55%,#3a1fa0);color:#fff;box-shadow:0 0 0 2px #c8912e,inset 0 2px 0 rgba(255,255,255,.35),inset 0 -4px 0 rgba(20,0,80,.4),0 14px 30px -10px rgba(110,70,255,.8)}
+.btn-violet:hover{filter:brightness(1.12)}
+.btn-sm{min-height:44px;padding:0 20px;font-size:13px;border-radius:12px}
+.btn .ico{width:18px;height:18px}
+@keyframes shine{0%,55%{transform:translateX(-120%)}80%,100%{transform:translateX(120%)}}
+
+/* Preloader */
+.preloader{position:fixed;inset:0;z-index:200;background:radial-gradient(circle at 50% 45%,#2a1870 0%,#0c0826 70%);display:grid;place-items:center}
+.pl-inner{display:flex;flex-direction:column;align-items:center;gap:24px}
+.pl-logo{width:min(380px,70vw);opacity:0;transform:scale(.85);animation:plin 1s .1s cubic-bezier(.2,1.2,.4,1) forwards;filter:drop-shadow(0 0 30px rgba(255,200,90,.5))}
+.pl-bar{width:200px;height:4px;background:rgba(255,255,255,.1);border-radius:4px;overflow:hidden;box-shadow:0 0 0 1px rgba(242,195,90,.4)}
+.pl-bar i{display:block;height:100%;width:0;background:var(--gold-grad);animation:bar 1.3s ease forwards}
+@keyframes plin{to{opacity:1;transform:none}}@keyframes bar{to{width:100%}}
+.flash{position:fixed;inset:0;z-index:150;pointer-events:none;background:radial-gradient(circle at var(--fx,50%) 15%,rgba(230,240,255,.9),rgba(150,180,255,.3) 40%,transparent 75%);opacity:0}
+
+/* Cursor */
+.cursor,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:300;border-radius:50%;transform:translate(-50%,-50%);display:none}
+.cursor{width:8px;height:8px;background:#ffe08a;box-shadow:0 0 14px 4px rgba(255,200,90,.8)}
+.cursor-ring{width:38px;height:38px;border:1.5px solid rgba(242,195,90,.6);transition:width .25s,height .25s,background .25s}
+.cursor-ring.hover{width:66px;height:66px;background:rgba(242,195,90,.1)}
+@media (pointer:fine){.cursor,.cursor-ring{display:block}}
+
+/* Header */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .4s,box-shadow .4s}
+.header.scrolled{background:rgba(12,8,38,.86);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(242,195,90,.3),0 10px 30px rgba(0,0,0,.4)}
+.header .row{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
+.logo img{height:46px;width:auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.6))}
+.nav{display:flex;gap:30px;font-weight:700;font-size:15px}
+.nav a{position:relative;color:#e8e2ff;transition:color .25s;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .3s;box-shadow:0 0 8px var(--gold)}
+.nav a:hover{color:var(--gold)}.nav a:hover::after{transform:scaleX(1)}
+.head-actions{display:flex;gap:10px;align-items:center}
+@media (max-width:960px){.nav{display:none}.head-actions .btn-violet{display:none}.logo img{height:38px}}
+
+/* ===== Hero ===== */
+.hero{min-height:100svh;display:flex;align-items:center;padding:110px 0 120px;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:-4%;z-index:-3;background:url(img/hero.webp) 70% 30%/cover no-repeat;transform-origin:70% 40%;will-change:transform}
+.hero-shade{position:absolute;inset:0;z-index:-2;background:
+  linear-gradient(90deg,rgba(12,8,38,.92) 0%,rgba(12,8,38,.72) 30%,rgba(12,8,38,.15) 58%,transparent 75%),
+  linear-gradient(180deg,rgba(12,8,38,.5) 0%,transparent 18%,transparent 70%,var(--bg) 100%)}
+#storm,#dust{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.hero-copy{position:relative;z-index:3;max-width:600px}
+.hero-logo{width:min(440px,90%);margin:0 0 6px -10px;filter:drop-shadow(0 10px 30px rgba(0,0,0,.6)) drop-shadow(0 0 30px rgba(255,190,80,.25))}
+.hero h1{font-family:'Cinzel',serif;font-weight:900;font-size:clamp(30px,3.8vw,50px);line-height:1.08;margin:6px 0 22px;text-shadow:0 4px 20px rgba(0,0,0,.7)}
+.hero h1 .word{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
+.hero h1 .ch{display:inline-block}
+.bonus-panel{padding:22px 26px 20px;margin-bottom:26px;max-width:580px}
+.bonus-panel .lbl{font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--sky);text-transform:uppercase}
+.bonus-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin:6px 0 8px}
+.bonus-big{font-family:'Cinzel',serif;font-weight:900;font-size:clamp(26px,3.1vw,42px);line-height:1}
+.bonus-plus{font-family:'Cinzel',serif;font-weight:900;font-size:30px;color:var(--sky);text-shadow:0 0 14px rgba(143,211,255,.8)}
+.bonus-fs{color:#bfe8ff;text-shadow:0 0 22px rgba(143,211,255,.7),0 3px 0 #1d3c9a}
+.bonus-panel .sub{font-size:14px;color:var(--muted);font-weight:600}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:26px}
+.trust-row{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13px;color:#ddd6ff;font-weight:700}
+.trust-row span{display:inline-flex;align-items:center;gap:8px}
+.trust-row .dot{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:rgba(242,195,90,.14);border:1px solid rgba(242,195,90,.5);color:var(--gold);font-size:10px;font-weight:900;font-style:normal}
+.coin-wrap{position:absolute;animation:float 6s ease-in-out infinite;z-index:2;pointer-events:none}
+.coin{position:relative;width:var(--s,64px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff6cf 0%,#f6cf63 30%,#c68d27 65%,#7a4f10 100%);box-shadow:inset 0 -4px 8px rgba(80,40,0,.5),inset 0 3px 6px rgba(255,255,255,.7),0 12px 26px rgba(0,0,0,.5),0 0 24px rgba(255,190,70,.4);display:grid;place-items:center;color:#7a4f10;font-family:'Cinzel',serif;font-weight:900;font-size:calc(var(--s,64px)*.42)}
+.coin::after{content:"";position:absolute;inset:12%;border-radius:50%;border:2px solid rgba(122,79,16,.4)}
+@keyframes float{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-18px) rotate(calc(var(--r,0deg) + 10deg))}}
+.scroll-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:11px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;font-weight:800}
+.scroll-hint i{width:1.5px;height:36px;background:linear-gradient(var(--gold),transparent);animation:hint 2s ease-in-out infinite}
+@keyframes hint{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media (max-width:900px){
+  .hero{align-items:flex-end;padding:44svh 0 60px;text-align:center;min-height:100svh}
+  .hero-bg{inset:0 0 auto 0;height:62svh;background-position:72% 15%}
+  .hero-shade{background:linear-gradient(180deg,rgba(12,8,38,.3) 0%,transparent 20%,rgba(12,8,38,.6) 45%,var(--bg) 62%,var(--bg) 100%)}
+  .header:not(.scrolled) .logo{opacity:0}
+  .hero-copy{margin-inline:auto}
+  .hero-logo{margin:0 auto 4px;width:min(320px,82%)}
+  .bonus-panel{margin-inline:auto}.bonus-row{justify-content:center}
+  .hero-ctas,.trust-row{justify-content:center}
+  .hero-ctas .btn{flex:1 1 100%}
+  .scroll-hint,.coin-wrap.opt{display:none}
+}
+
+/* Stats */
+.stats .grid{display:grid;grid-template-columns:repeat(4,1fr);padding:6px}
+.stat{padding:26px 16px;text-align:center;border-right:1px solid rgba(242,195,90,.2)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:'Cinzel',serif;font-weight:900;font-size:clamp(26px,3vw,38px);line-height:1.1}
+.stat>span{font-size:13px;color:var(--muted);font-weight:600}
+@media (max-width:760px){.stats .grid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid rgba(242,195,90,.2)}}
+
+/* Ticker */
+.ticker{overflow:hidden;padding:16px 0;margin-top:46px;background:linear-gradient(90deg,rgba(108,61,240,.15),rgba(45,75,216,.15));border-block:1px solid rgba(242,195,90,.25);position:relative}
+.ticker::before,.ticker::after{content:"";position:absolute;top:0;bottom:0;width:90px;z-index:2}
+.ticker::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.ticker::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent)}
+.ticker-track{display:flex;gap:44px;width:max-content;animation:marquee 45s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.tick{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);white-space:nowrap;font-weight:600}
+.tick b{color:var(--gold)}
+.tick .live{width:8px;height:8px;border-radius:50%;background:#3ee07a;box-shadow:0 0 10px #3ee07a}
+.tick-label{font-size:11px;font-weight:800;letter-spacing:.2em;color:var(--sky)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* Section backgrounds */
+.bg-violet{background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(108,61,240,.35),transparent 70%),radial-gradient(ellipse 50% 50% at 90% 80%,rgba(45,75,216,.25),transparent 70%)}
+
+/* Bonus cards */
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;perspective:1200px;margin-top:60px}
+.bcard{overflow:visible;transform-style:preserve-3d;padding:0}
+.bcard .pic{position:relative;height:300px;border-radius:15px 15px 0 0;overflow:hidden}
+.bcard .pic img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.bcard:hover .pic img{transform:scale(1.08)}
+.bcard .pic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(16,10,46,.95))}
+.picwrap{position:relative}
+.bcard .plate{position:absolute;left:50%;bottom:-18px;transform:translateX(-50%);z-index:3;padding:8px 26px;border-radius:10px;font-family:'Cinzel',serif;font-weight:900;font-size:16px;letter-spacing:.18em;color:#3a1d00;background:var(--btn);box-shadow:0 0 0 2px #7a4f10,0 8px 20px rgba(0,0,0,.5);white-space:nowrap}
+.bcard .num{position:absolute;top:14px;left:16px;z-index:2;font-family:'Cinzel',serif;font-weight:900;font-size:13px;letter-spacing:.2em;padding:6px 12px;border-radius:8px;background:rgba(12,8,38,.7);border:1px solid rgba(242,195,90,.5);color:var(--gold)}
+.bcard .body{padding:36px 26px 26px;text-align:center}
+.bcard .pct{font-family:'Cinzel',serif;font-weight:900;font-size:60px;line-height:1}
+.bcard .upto{font-size:15px;color:var(--muted);margin:4px 0 14px;font-weight:600}
+.bcard .fs{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:rgba(143,211,255,.12);border:1px solid rgba(143,211,255,.35);color:#cdeeff;font-weight:800;font-size:14px}
+.bcard ul{list-style:none;margin-top:20px;padding-top:16px;border-top:1px dashed rgba(242,195,90,.3);display:grid;gap:8px;font-size:14px;color:var(--muted);text-align:left}
+.bcard li{display:flex;justify-content:space-between}
+.bcard li b{color:var(--ink)}
+.bcard.featured{transform:translateY(-14px)}
+.bcard.featured .ribbon{position:absolute;top:-16px;right:18px;z-index:5;padding:6px 14px;border-radius:8px;font-size:11px;font-weight:900;letter-spacing:.14em;background:linear-gradient(180deg,#ff6b8b,#d0244f);color:#fff;box-shadow:0 0 0 2px #fff3c4,0 8px 18px rgba(208,36,79,.6)}
+.glare{position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:radial-gradient(circle at var(--gx,50%) var(--gy,0%),rgba(255,240,200,.22),transparent 45%);opacity:0;transition:opacity .3s;z-index:3}
+.tilt:hover .glare{opacity:1}
+.terms-note{margin-top:34px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:14px;color:var(--muted);text-align:center}
+.terms-note svg{flex:none;width:20px;height:20px;color:var(--gold)}
+@media (max-width:900px){.cards3{grid-template-columns:1fr;max-width:420px;margin-inline:auto;gap:40px}.bcard.featured{transform:none}}
+
+/* Wheel */
+.wheel-sec{background:url(img/temple.webp) center/cover no-repeat;overflow:hidden}
+.wheel-sec::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,rgba(12,8,38,.55) 18%,rgba(12,8,38,.45) 50%,rgba(12,8,38,.6) 82%,var(--bg) 100%),radial-gradient(ellipse 50% 60% at 25% 50%,rgba(12,8,38,.75),transparent 70%)}
+.wheel-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px}
+.wheel-list{list-style:none;display:grid;gap:14px;margin:26px 0 34px}
+.wheel-list li{display:flex;gap:14px;align-items:flex-start;color:#ddd6ff}
+.wheel-list li b{color:#fff}
+.wheel-list .chk{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--btn);color:#3a1d00;font-size:13px;font-weight:900;box-shadow:0 0 0 2px #7a4f10}
+.wheel-wrap{position:relative;width:min(540px,100%);aspect-ratio:1;margin-inline:auto}
+.wheel-glow{position:absolute;inset:-14%;border-radius:50%;background:radial-gradient(circle,rgba(255,200,90,.55),rgba(140,90,255,.25) 45%,transparent 68%);animation:pulse 3s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.7;transform:scale(.97)}50%{opacity:1;transform:scale(1.03)}}
+#wheel{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))}
+.pointer{position:absolute;top:-4%;left:50%;width:14%;transform:translateX(-50%);transform-origin:50% 30%;z-index:3;filter:drop-shadow(0 6px 10px rgba(0,0,0,.6))}
+.wheel-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:27%;aspect-ratio:1;border-radius:50%;z-index:4;background:radial-gradient(circle at 40% 30%,#fff3c4,#f2c24f 40%,#b67a1c 100%);box-shadow:inset 0 -6px 12px rgba(90,50,0,.5),inset 0 4px 8px rgba(255,255,255,.8),0 0 0 6px #2a1870,0 0 0 9px #e0a531,0 0 50px rgba(255,190,70,.7);font-family:'Cinzel',serif;font-weight:900;color:#3a1d00;font-size:clamp(15px,2vw,22px);letter-spacing:.06em;transition:transform .2s}
+.wheel-btn:hover{transform:translate(-50%,-50%) scale(1.06)}
+.wheel-btn:disabled{cursor:default}
+.wheel-btn:disabled:hover{transform:translate(-50%,-50%)}
+@media (max-width:900px){.wheel-grid{grid-template-columns:1fr;gap:40px}.wheel-copy{text-align:center}.wheel-copy .lead{margin-inline:auto}.wheel-list{text-align:left;max-width:440px;margin-inline:auto}}
+
+/* Gods */
+.filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:30px 0 50px}
+.chip{min-height:44px;padding:0 22px;border-radius:12px;border:1px solid rgba(242,195,90,.4);background:rgba(28,18,72,.6);font-size:14px;font-weight:800;color:#ddd6ff;transition:all .25s}
+.chip:hover{border-color:var(--gold);color:#fff}
+.chip.active{background:var(--btn);color:#3a1d00;border-color:transparent;box-shadow:0 0 0 2px #7a4f10,0 8px 20px -6px rgba(255,170,40,.7)}
+.gods{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;perspective:1200px}
+.god{padding:0;transform-style:preserve-3d;cursor:pointer}
+.god.hide{display:none}
+.god .pic{position:relative;aspect-ratio:3/4;border-radius:15px;overflow:hidden}
+.god .pic img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.8,.2,1),filter .5s}
+.god:hover .pic img{transform:scale(1.1);filter:saturate(1.15) brightness(1.08)}
+.god .pic::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.35) 50%,transparent 65%);transform:translateX(-130%);transition:transform 1s}
+.god:hover .pic::before{transform:translateX(130%)}
+.god .pic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(12,8,38,.4) 60%,rgba(12,8,38,.97) 92%)}
+.god .badge{position:absolute;top:14px;right:14px;z-index:3;padding:6px 12px;border-radius:8px;font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.badge.hot{background:linear-gradient(180deg,#ff9a4a,#e0451f);color:#fff;box-shadow:0 0 0 1.5px #fff0b0}
+.badge.new{background:linear-gradient(180deg,#7fd8ff,#2d6bd8);color:#fff;box-shadow:0 0 0 1.5px #fff0b0}
+.badge.live{background:linear-gradient(180deg,#ff5d7a,#c41f45);color:#fff;box-shadow:0 0 0 1.5px #fff0b0}
+.god .info{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:18px 18px 18px;text-align:center}
+.god .title{font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--sky)}
+.god h3{font-family:'Cinzel',serif;font-weight:900;font-size:24px;line-height:1.1;margin:4px 0 6px}
+.god .meta{display:flex;justify-content:center;gap:10px;font-size:12px;color:var(--muted);font-weight:700;margin-bottom:12px}
+.god .btn{width:100%;opacity:0;transform:translateY(10px);transition:all .35s;max-height:0;min-height:0;padding:0;overflow:hidden}
+.god:hover .btn,.god:focus-within .btn{opacity:1;transform:none;max-height:50px;min-height:46px;padding:0 20px}
+@media (hover:none){.god .btn{opacity:1;transform:none;max-height:50px;min-height:46px;padding:0 20px}}
+@media (max-width:1000px){.gods{grid-template-columns:repeat(2,1fr);gap:22px}}
+@media (max-width:560px){.gods{grid-template-columns:1fr 1fr;gap:14px}.god h3{font-size:17px}.god .title{font-size:9px;letter-spacing:.12em}.god .meta{font-size:10px;flex-wrap:wrap;gap:4px}.god .info{padding:12px 10px}.god .btn{font-size:11px}}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:60px}
+.step{padding:34px 28px 30px;text-align:center}
+.step .n{width:64px;height:64px;margin:-66px auto 18px;border-radius:50%;display:grid;place-items:center;font-family:'Cinzel',serif;font-weight:900;font-size:24px;background:var(--btn);color:#3a1d00;box-shadow:0 0 0 3px #7a4f10,0 0 0 6px rgba(242,195,90,.3),0 10px 24px rgba(0,0,0,.5)}
+.step h3{font-size:20px;font-weight:800;margin-bottom:8px}
+.step p{color:var(--muted);font-size:15px}
+.pay-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}
+.pay{padding:6px 12px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);font-size:12px;font-weight:800}
+@media (max-width:900px){.steps{grid-template-columns:1fr;gap:56px;max-width:440px;margin-inline:auto;margin-top:70px}}
+
+/* VIP */
+.path{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:64px}
+.path-line{position:absolute;top:47px;left:12.5%;right:12.5%;height:4px;border-radius:4px;background:rgba(242,195,90,.15)}
+.path-line i{position:absolute;inset:0;border-radius:4px;background:var(--gold-grad);transform-origin:left;transform:scaleX(0);box-shadow:0 0 14px rgba(255,200,90,.8)}
+.tier{text-align:center}
+.tier .medal{width:98px;height:98px;margin:0 auto 22px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#2a1870,#120b36);border:3px solid rgba(242,195,90,.3);position:relative;z-index:1;transition:all .5s}
+.tier.on .medal{border-color:#ffd76a;background:radial-gradient(circle at 40% 30%,#fff3c4,#f2c24f 45%,#a8701a);box-shadow:0 0 0 6px rgba(242,195,90,.18),0 0 40px rgba(255,190,70,.7)}
+.tier .medal svg{width:40px;height:40px;color:var(--gold);transition:color .5s}
+.tier.on .medal svg{color:#3a1d00}
+.tier h3{font-family:'Cinzel',serif;font-weight:900;font-size:22px;margin-bottom:4px}
+.tier .cb{font-weight:800;color:var(--sky);font-size:15px;margin-bottom:10px}
+.tier p{color:var(--muted);font-size:14px;max-width:230px;margin-inline:auto}
+@media (max-width:900px){.path{grid-template-columns:1fr 1fr;gap:40px 16px}.path-line{display:none}}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}
+.faq-list{padding:6px 30px}
+.faq-item{border-bottom:1px solid rgba(242,195,90,.2)}
+.faq-item:last-child{border-bottom:0}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;text-align:left;font-size:17px;font-weight:700}
+.faq-q .pm{flex:none;width:32px;height:32px;border-radius:50%;border:1px solid rgba(242,195,90,.5);position:relative;transition:all .3s}
+.faq-q .pm::before,.faq-q .pm::after{content:"";position:absolute;top:50%;left:50%;width:12px;height:2px;background:var(--gold);transform:translate(-50%,-50%);transition:transform .3s,background .3s}
+.faq-q .pm::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq-item.open .pm{background:var(--btn);border-color:transparent}
+.faq-item.open .pm::before,.faq-item.open .pm::after{background:#3a1d00}
+.faq-item.open .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease}
+.faq-a>div{overflow:hidden}
+.faq-a p{color:var(--muted);padding-bottom:22px}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+@media (max-width:900px){.faq-grid{grid-template-columns:1fr;gap:20px}.faq-list{padding:4px 20px}}
+
+/* Final */
+.final .box{position:relative;border-radius:28px;padding:clamp(50px,7vw,80px) 24px;text-align:center;overflow:hidden;isolation:isolate;border:3px solid transparent;background:linear-gradient(180deg,rgba(12,8,38,.55),rgba(12,8,38,.85)) padding-box,url(img/hero.webp) 70% 30%/cover padding-box,var(--frame) border-box}
+.final .box::before{content:"";position:absolute;width:1600px;aspect-ratio:1;left:50%;top:30%;border-radius:50%;background:repeating-conic-gradient(rgba(255,220,140,.12) 0 5deg,transparent 5deg 14deg);transform:translate(-50%,-50%);animation:spin 90s linear infinite;z-index:-1;-webkit-mask:radial-gradient(circle,#000 10%,transparent 55%);mask:radial-gradient(circle,#000 10%,transparent 55%)}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.medals{display:flex;justify-content:center;margin-bottom:24px}
+.medals img{width:clamp(56px,9vw,96px);aspect-ratio:1;object-fit:cover;object-position:50% 14%;border-radius:50%;margin:0 -8px;border:3px solid #e0a531;box-shadow:0 0 0 2px #7a4f10,0 10px 20px rgba(0,0,0,.5);background:#160f3d}
+.medals img:nth-child(3),.medals img:nth-child(4){width:clamp(70px,11vw,118px);z-index:2}
+.final .logo-big{width:min(420px,80%);margin:0 auto 8px;filter:drop-shadow(0 10px 30px rgba(0,0,0,.6))}
+.final h2{font-family:'Cinzel',serif;font-weight:900;font-size:clamp(26px,3.6vw,44px);line-height:1.1;margin:6px auto 20px;max-width:800px;text-shadow:0 4px 20px rgba(0,0,0,.7)}
+.final .lead{margin:0 auto 30px;color:#ddd6ff}
+.timer{display:inline-flex;gap:10px;margin-bottom:28px}
+.timer div{min-width:80px;padding:12px 8px}
+.timer b{display:block;font-family:'Cinzel',serif;font-size:30px;font-weight:900;font-variant-numeric:tabular-nums}
+.timer span{font-size:11px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;font-weight:700}
+.timer .frame::before,.timer .frame::after{display:none}
+
+/* Footer */
+footer{padding:60px 0 120px;color:var(--muted);font-size:14px;background:#08051c}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin:40px 0}
+footer h4{color:var(--ink);font-size:14px;font-weight:800;margin-bottom:14px}
+footer ul{list-style:none;display:grid;gap:10px}
+footer a:hover{color:var(--gold)}
+.rg{display:flex;gap:14px;align-items:center;padding:22px 0;border-block:1px solid rgba(242,195,90,.2);margin-bottom:24px}
+.age{width:46px;height:46px;border-radius:50%;border:2px solid #ff6b6b;color:#ff8a8a;display:grid;place-items:center;font-weight:900;font-size:15px;flex:none}
+.disclaimer{font-size:13px}
+@media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}.foot-grid>div:first-child{grid-column:1/-1}}
+
+/* Sticky */
+.sticky-cta{position:fixed;left:12px;right:12px;bottom:12px;z-index:90;display:none;align-items:center;justify-content:space-between;gap:12px;padding:10px 10px 10px 18px;transform:translateY(160%);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.sticky-cta::before,.sticky-cta::after{display:none}
+.sticky-cta.show{transform:none}
+.sticky-cta small{display:block;color:var(--muted);font-size:11px;font-weight:700}
+.sticky-cta b{font-size:16px;font-family:'Cinzel',serif;font-weight:900}
+@media (max-width:760px){.sticky-cta{display:flex}}
+
+/* Modal */
+.modal{position:fixed;inset:0;z-index:250;display:grid;place-items:center;padding:20px;visibility:hidden;opacity:0;transition:opacity .35s,visibility .35s}
+.modal.open{visibility:visible;opacity:1}
+.modal-bg{position:absolute;inset:0;background:rgba(6,4,20,.8);backdrop-filter:blur(8px)}
+.modal-card{width:min(460px,100%);padding:0 28px 28px;text-align:center;transform:scale(.9) translateY(20px);transition:transform .45s cubic-bezier(.2,1.3,.4,1);overflow:visible}
+.modal.open .modal-card{transform:none}
+.modal-head{margin:0 -28px 16px;height:170px;border-radius:15px 15px 0 0;overflow:hidden;position:relative}
+.modal-head img{width:100%;height:100%;object-fit:cover;object-position:50% 15%}
+.modal-head::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(16,10,46,1))}
+.modal-x{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:22px;background:rgba(12,8,38,.7);border:1px solid rgba(242,195,90,.5);z-index:5}
+.modal-prize{font-family:'Cinzel',serif;font-weight:900;font-size:38px;line-height:1;margin:8px 0 6px}
+.modal p.sub{color:var(--muted);font-size:14px;margin-bottom:20px}
+.form{display:grid;gap:12px;text-align:left}
+.field label{display:block;font-size:12px;font-weight:800;color:var(--muted);margin-bottom:6px}
+.field input,.field select{width:100%;height:52px;border-radius:12px;padding:0 16px;background:rgba(8,5,28,.8);border:1.5px solid rgba(242,195,90,.3);color:var(--ink);font:inherit;font-size:16px;transition:border-color .2s,box-shadow .2s}
+.field input:focus,.field select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(242,195,90,.18)}
+.field.err input{border-color:#ff6b6b}
+.field .msg{font-size:12px;color:#ff8a8a;margin-top:4px}
+.form .btn{width:100%;margin-top:6px}
+.fine{font-size:12px;color:var(--muted);margin-top:8px;text-align:center}
+.success{display:none}
+.modal.done .form,.modal.done .pre{display:none}
+.modal.done .success{display:block}
+
+.js [data-reveal]{opacity:0;transform:translateY(40px)}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:260;width:100%;height:100%}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .js [data-reveal]{opacity:1;transform:none}
+}
+</style>
+</head>
+<body class="loading">
+
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pl-inner"><img class="pl-logo" src="img/logo.webp" alt=""><div class="pl-bar"><i></i></div></div>
+</div>
+<div class="flash" id="flash"></div>
+<div class="cursor" id="cursor"></div><div class="cursor-ring" id="cursorRing"></div>
+<canvas id="fx"></canvas>
+
+<header class="header" id="header">
+  <div class="container row">
+    <a href="#top" class="logo" aria-label="Pantheon home"><img src="img/logo.webp" alt="PANTHEON"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#bonus">Welcome Pack</a><a href="#wheel-sec">Wheel of Fate</a><a href="#gods">The Gods</a><a href="#vip">VIP</a><a href="#faq">FAQ</a>
+    </nav>
+    <div class="head-actions">
+      <button class="btn btn-violet btn-sm" data-open-modal>Log in</button>
+      <button class="btn btn-gold btn-sm magnetic" data-open-modal>Sign up</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-shade"></div>
+  <canvas id="storm"></canvas><canvas id="dust"></canvas>
+  <div class="coin-wrap" style="top:16%;right:6%;--r:14deg" data-depth=".7"><div class="coin" style="--s:58px">Ω</div></div>
+  <div class="coin-wrap opt" style="top:62%;left:46%;animation-delay:-2s;--r:-10deg" data-depth=".9"><div class="coin" style="--s:46px">Ω</div></div>
+  <div class="coin-wrap opt" style="bottom:12%;right:12%;animation-delay:-3.5s;--r:8deg" data-depth=".6"><div class="coin" style="--s:72px">Ω</div></div>
+
+  <div class="container">
+    <div class="hero-copy">
+      <img class="hero-logo hero-in" src="img/logo.webp" alt="PANTHEON — Casino of the Gods">
+      <h1 id="heroTitle" data-split>Claim your throne<br><span class="gold-text">on Olympus</span></h1>
+      <div class="bonus-panel frame hero-in">
+        <span class="lbl">⚡ Thunder Welcome Pack</span>
+        <div class="bonus-row">
+          <span class="bonus-big gold-text title-glow"><span data-count="225">225</span>% up to €<span data-count="1500" data-sep="1">1,500</span></span>
+          <span class="bonus-plus">+</span>
+          <span class="bonus-big bonus-fs"><span data-count="200">200</span> FS</span>
+        </div>
+        <span class="sub">Split across your first 3 deposits · from €20 · x35 wagering</span>
+      </div>
+      <div class="hero-ctas hero-in">
+        <button class="btn btn-gold magnetic" data-open-modal>Claim bonus</button>
+        <a href="#wheel-sec" class="btn btn-violet magnetic">Spin the wheel</a>
+      </div>
+      <div class="trust-row hero-in">
+        <span><i class="dot">18+</i>Adults only</span>
+        <span><i class="dot">✓</i>Licensed · RNG certified</span>
+        <span><i class="dot">⚡</i>Crypto payouts ~15 min</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll<i></i></div>
+</section>
+
+<div class="stats">
+  <div class="container">
+    <div class="grid frame" data-reveal>
+      <div class="stat"><b class="gold-text"><span data-count="4000" data-sep="1">4,000</span>+</b><span>Slots, live & crash games</span></div>
+      <div class="stat"><b class="gold-text">~<span data-count="15">15</span> min</b><span>Average crypto payout</span></div>
+      <div class="stat"><b class="gold-text"><span data-count="24">24</span>/7</b><span>Live support, 12 languages</span></div>
+      <div class="stat"><b class="gold-text"><span data-count="96.4" data-dec="1">96.4</span>%</b><span>Average RTP across games</span></div>
+    </div>
+  </div>
+</div>
+<div class="ticker" aria-label="Recent wins (demo data)"><div class="ticker-track" id="ticker"></div></div>
+
+<section class="section bg-violet" id="bonus">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow" data-reveal>Welcome Pack</span>
+      <h2 class="h2" data-reveal>Three deposits.<br><span class="gold-text title-glow">Three gods on your side.</span></h2>
+      <p class="lead" data-reveal>Each bonus is credited instantly after the deposit — no promo codes, no waiting for support. Full terms are shown before you pay.</p>
+    </div>
+    <div class="cards3">
+      <article class="bcard frame tilt" data-reveal>
+        <div class="picwrap"><div class="pic"><span class="num">1ST DEPOSIT</span><img src="img/zeus.webp" alt="Zeus"></div><span class="plate">ZEUS</span></div>
+        <div class="body"><div class="pct gold-text title-glow">100%</div><div class="upto">up to €500</div><span class="fs">⚡ +100 Free Spins</span>
+        <ul><li>Min. deposit <b>€20</b></li><li>Wagering <b>x35</b></li><li>Valid for <b>7 days</b></li></ul></div><div class="glare"></div>
+      </article>
+      <article class="bcard frame tilt featured" data-reveal>
+        <span class="ribbon">BEST VALUE</span>
+        <div class="picwrap"><div class="pic"><span class="num">2ND DEPOSIT</span><img src="img/poseidon.webp" alt="Poseidon"></div><span class="plate">POSEIDON</span></div>
+        <div class="body"><div class="pct gold-text title-glow">75%</div><div class="upto">up to €500</div><span class="fs">🔱 +50 Free Spins</span>
+        <ul><li>Min. deposit <b>€20</b></li><li>Wagering <b>x35</b></li><li>Valid for <b>7 days</b></li></ul></div><div class="glare"></div>
+      </article>
+      <article class="bcard frame tilt" data-reveal>
+        <div class="picwrap"><div class="pic"><span class="num">3RD DEPOSIT</span><img src="img/athena.webp" alt="Athena"></div><span class="plate">ATHENA</span></div>
+        <div class="body"><div class="pct gold-text title-glow">50%</div><div class="upto">up to €500</div><span class="fs">🦉 +50 Free Spins</span>
+        <ul><li>Min. deposit <b>€20</b></li><li>Wagering <b>x35</b></li><li>Valid for <b>7 days</b></li></ul></div><div class="glare"></div>
+      </article>
+    </div>
+    <p class="terms-note" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+      Max bet while wagering: €5. Free spins are credited on Thunder of Zeus. Cancel a bonus anytime in Profile → Bonuses.</p>
+  </div>
+</section>
+
+<section class="section wheel-sec" id="wheel-sec">
+  <div class="container wheel-grid">
+    <div class="wheel-copy">
+      <span class="eyebrow" data-reveal>Wheel of Fate</span>
+      <h2 class="h2" data-reveal>One free spin.<br><span class="gold-text title-glow">Guaranteed prize.</span></h2>
+      <p class="lead" data-reveal style="color:#ddd6ff">Every new player gets one spin before signing up. Whatever the gods decide is yours — credited on top of the Welcome Pack.</p>
+      <ul class="wheel-list" data-reveal>
+        <li><span class="chk">✓</span><span><b>No deposit needed</b> to spin — just tap the wheel.</span></li>
+        <li><span class="chk">✓</span><span><b>Every sector wins:</b> free spins or bonus cash.</span></li>
+        <li><span class="chk">✓</span><span><b>Prize is saved</b> for 24 hours while you register.</span></li>
+      </ul>
+      <button class="btn btn-gold magnetic" id="spinBtn2" data-reveal>Spin the wheel</button>
+    </div>
+    <div class="wheel-wrap" data-reveal>
+      <div class="wheel-glow"></div>
+      <svg id="wheel" viewBox="0 0 500 500" aria-label="Wheel of Fate">
+        <defs>
+          <linearGradient id="wGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff2c2"/><stop offset=".3" stop-color="#e3ad45"/><stop offset=".55" stop-color="#8a5c18"/><stop offset=".75" stop-color="#f7d77a"/><stop offset="1" stop-color="#9a6516"/></linearGradient>
+          <radialGradient id="wA" cx=".5" cy=".5" r=".5"><stop offset=".25" stop-color="#7f5bff"/><stop offset="1" stop-color="#2e1488"/></radialGradient>
+          <radialGradient id="wB" cx=".5" cy=".5" r=".5"><stop offset=".25" stop-color="#4a8cff"/><stop offset="1" stop-color="#14328f"/></radialGradient>
+          <radialGradient id="wC" cx=".5" cy=".5" r=".5"><stop offset=".25" stop-color="#ffe28a"/><stop offset="1" stop-color="#c2801c"/></radialGradient>
+          <linearGradient id="pG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff4cc"/><stop offset="1" stop-color="#c38e2c"/></linearGradient>
+        </defs>
+        <circle cx="250" cy="250" r="249" fill="url(#wGold)"/>
+        <circle cx="250" cy="250" r="236" fill="#1a0f48"/>
+        <g id="bulbs"></g>
+        <g id="wheelRot"></g>
+        <circle cx="250" cy="250" r="214" fill="none" stroke="url(#wGold)" stroke-width="6"/>
+      </svg>
+      <svg class="pointer" id="pointer" viewBox="0 0 60 80" aria-hidden="true"><path d="M30 78 L6 22 A26 26 0 1 1 54 22 Z" fill="url(#pG)" stroke="#6b430d" stroke-width="2"/><circle cx="30" cy="26" r="9" fill="#d0244f" stroke="#fff3c4" stroke-width="2"/></svg>
+      <button class="wheel-btn" id="spinBtn" aria-label="Spin the wheel">SPIN</button>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-violet" id="gods">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow" data-reveal>Pantheon Originals</span>
+      <h2 class="h2" data-reveal>Meet the gods.<br><span class="gold-text title-glow">Play their games.</span></h2>
+      <p class="lead" data-reveal>Six exclusive games — each one ruled by its own god, with its own mechanic and bonus feature.</p>
+    </div>
+    <div class="filters" data-reveal>
+      <button class="chip active" data-filter="all">All gods</button>
+      <button class="chip" data-filter="slots">Slots</button>
+      <button class="chip" data-filter="crash">Crash & Mines</button>
+      <button class="chip" data-filter="live">Live</button>
+    </div>
+    <div class="gods" id="godsGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="how" style="padding-top:20px">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow" data-reveal>How it works</span>
+      <h2 class="h2" data-reveal>From mortal to winner<br><span class="gold-text title-glow">in 3 steps</span></h2>
+    </div>
+    <div class="steps" style="margin-top:80px">
+      <div class="step frame" data-reveal><div class="n">I</div><h3>Create an account</h3><p>Email, password, currency — that's it. Takes about 30 seconds, no documents at this stage.</p></div>
+      <div class="step frame" data-reveal><div class="n">II</div><h3>Deposit from €20</h3><p>Pay the way you're used to. Deposits are instant and free of fees on our side.</p>
+        <div class="pay-row"><span class="pay">VISA</span><span class="pay">Mastercard</span><span class="pay">Apple Pay</span><span class="pay">Google Pay</span><span class="pay">BTC</span><span class="pay">USDT</span></div></div>
+      <div class="step frame" data-reveal><div class="n">III</div><h3>Get 100% + 100 FS</h3><p>Zeus's bonus lands instantly. Play, meet the x35 wagering and withdraw — crypto payouts take ~15 minutes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-violet" id="vip">
+  <div class="container center">
+    <span class="eyebrow" data-reveal>VIP Program</span>
+    <h2 class="h2" data-reveal>The path <span class="gold-text title-glow">to Olympus</span></h2>
+    <p class="lead" data-reveal>Every €1 wagered earns 1 Olympus Point. Climb four tiers — the cashback grows with you and never expires.</p>
+    <div class="path" id="path">
+      <div class="path-line"><i id="pathFill"></i></div>
+      <div class="tier"><div class="medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div><h3>Mortal</h3><div class="cb">5% cashback</div><p>Weekly cashback on net losses, paid every Monday with no wagering.</p></div>
+      <div class="tier"><div class="medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg></div><h3>Hero</h3><div class="cb">8% cashback</div><p>+ 50 free spins every Friday and a birthday bonus. From 5,000 points.</p></div>
+      <div class="tier"><div class="medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Demigod</h3><div class="cb">12% cashback</div><p>+ personal manager and higher withdrawal limits. From 25,000 points.</p></div>
+      <div class="tier"><div class="medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 18h18M5 18l-1-9 5 4 3-7 3 7 5-4-1 9"/></svg></div><h3>Olympian</h3><div class="cb">15% cashback</div><p>+ priority payouts, exclusive tournaments and real-world gifts. Invite only.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container faq-grid">
+    <div>
+      <span class="eyebrow" data-reveal>FAQ</span>
+      <h2 class="h2" data-reveal>Straight<br><span class="gold-text title-glow">answers</span></h2>
+      <p class="lead" data-reveal>Didn't find yours? Live chat answers in under 2 minutes, 24/7.</p>
+    </div>
+    <div class="faq-list frame" id="faqList" data-reveal></div>
+  </div>
+</section>
+
+<section class="section final" style="padding-top:0">
+  <div class="container">
+    <div class="box" data-reveal>
+      <div class="medals" id="medals"></div>
+      <img class="logo-big" src="img/logo.webp" alt="PANTHEON">
+      <span class="eyebrow">Welcome offer ends in</span>
+      <h2>The whole Pantheon <span class="gold-text">is waiting for you</span></h2>
+      <div class="timer" id="timer">
+        <div class="frame"><b data-t="h" class="gold-text">23</b><span>Hours</span></div><div class="frame"><b data-t="m" class="gold-text">59</b><span>Min</span></div><div class="frame"><b data-t="s" class="gold-text">59</b><span>Sec</span></div>
+      </div>
+      <p class="lead">225% up to €1,500 + 200 Free Spins on your first three deposits.</p>
+      <button class="btn btn-gold magnetic" data-open-modal style="min-height:64px;padding:0 44px;font-size:18px">Claim 225% + 200 FS</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="meander"></div>
+    <div class="foot-grid">
+      <div><a href="#top" class="logo"><img src="img/logo.webp" alt="PANTHEON" style="height:54px;margin-bottom:12px"></a><p style="max-width:320px">Casino of the gods. Fair games, fast payouts, transparent bonuses.</p></div>
+      <div><h4>Casino</h4><ul><li><a href="#gods">Slots</a></li><li><a href="#gods">Crash & Mines</a></li><li><a href="#gods">Live casino</a></li></ul></div>
+      <div><h4>Promotions</h4><ul><li><a href="#bonus">Welcome Pack</a></li><li><a href="#wheel-sec">Wheel of Fate</a></li><li><a href="#vip">VIP program</a></li></ul></div>
+      <div><h4>Help</h4><ul><li><a href="#faq">FAQ</a></li><li><a href="#faq">Bonus terms</a></li><li><a href="#faq">Responsible gaming</a></li></ul></div>
+    </div>
+    <div class="rg"><span class="age">18+</span><p>Play responsibly. Set deposit limits, session reminders or self-exclusion in your profile at any time. If gambling stops being fun, contact a support service in your country.</p></div>
+    <p class="disclaimer">PANTHEON is a fictional brand — a concept landing page created for a design portfolio. No real-money gaming; all figures and wins are demo data. Illustrations generated with AI. Design & development: Alina Matronina, 2026.</p>
+  </div>
+</footer>
+
+<div class="sticky-cta frame" id="stickyCta"><div><small>Welcome Pack</small><b class="gold-text">225% + 200 FS</b></div><button class="btn btn-gold btn-sm" data-open-modal>Claim</button></div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-bg" data-close></div>
+  <div class="modal-card frame">
+    <button class="modal-x" data-close aria-label="Close">×</button>
+    <div class="modal-head"><img id="modalImg" src="img/zeus.webp" alt=""></div>
+    <div class="pre">
+      <span class="eyebrow" id="modalEyebrow">Welcome Pack</span>
+      <div class="modal-prize gold-text title-glow" id="modalTitle">225% + 200 FS</div>
+      <p class="sub" id="modalSub">Create your account — the bonus is credited after your first deposit.</p>
+    </div>
+    <form class="form" id="regForm" novalidate>
+      <div class="field"><label for="email">Email</label><input id="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com"><div class="msg"></div></div>
+      <div class="field"><label for="pass">Password</label><input id="pass" type="password" autocomplete="new-password" placeholder="Min. 8 characters"><div class="msg"></div></div>
+      <div class="field"><label for="cur">Currency</label><select id="cur"><option>EUR €</option><option>USD $</option><option>PLN zł</option><option>USDT</option><option>BTC</option></select></div>
+      <button class="btn btn-gold" type="submit">Create account</button>
+      <p class="fine">By signing up you confirm you're 18+ and accept the Terms. Demo form — no data is sent.</p>
+    </form>
+    <div class="success">
+      <div class="modal-prize gold-text title-glow" style="font-size:32px">Welcome, hero!</div>
+      <p class="sub">Your account is ready and your prize is saved. Make your first deposit to activate 100% + 100 FS.</p>
+      <button class="btn btn-gold" data-close style="width:100%">Continue</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const finePointer=matchMedia('(pointer: fine)').matches;
+const hasGsap=typeof window.gsap!=='undefined';
+if(hasGsap&&!reduce)document.documentElement.classList.add('js');
+if(hasGsap)gsap.registerPlugin(ScrollTrigger);
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const NS='http://www.w3.org/2000/svg';
+const el=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e};
+
+/* Preloader */
+const flash=$('#flash');
+function doFlash(x){if(reduce||!hasGsap)return;flash.style.setProperty('--fx',(x??50)+'%');gsap.fromTo(flash,{opacity:.8},{opacity:0,duration:.6,ease:'power2.out'})}
+let started=false;
+function startSite(){if(started)return;started=true;const pl=$('#preloader');document.body.classList.remove('loading');
+  if(!hasGsap||reduce){pl.remove();setupScroll();return}
+  doFlash(70);gsap.to(pl,{opacity:0,duration:.6,onComplete:()=>pl.remove()});heroIntro()}
+addEventListener('load',()=>setTimeout(startSite,reduce?0:1300));setTimeout(startSite,4500);
+
+/* Split */
+function split(node){node.setAttribute('aria-label',node.textContent.replace(/\s+/g,' ').trim());
+  const walk=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const fr=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(w=>{if(!w)return;if(/^\s+$/.test(w)){fr.appendChild(document.createTextNode(' '));return}const ws=document.createElement('span');ws.className='word';[...w].forEach(ch=>{const s=document.createElement('span');s.className='ch';s.textContent=ch;ws.appendChild(s)});fr.appendChild(ws)});c.replaceWith(fr)}else if(c.nodeType===1)walk(c)})};
+  walk(node);$$('.gold-text .ch',node).forEach(c=>c.classList.add('gold-text'))}
+split($('#heroTitle'));
+
+function countUp(node,delay=0){const end=parseFloat(node.dataset.count),dec=+(node.dataset.dec||0),sep=node.dataset.sep;
+  const fmt=v=>sep?Number(v.toFixed(dec)).toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec}):v.toFixed(dec);
+  if(!hasGsap||reduce){node.textContent=fmt(end);return}const o={v:0};node.textContent=fmt(0);gsap.to(o,{v:end,duration:2,delay,ease:'power3.out',onUpdate:()=>node.textContent=fmt(o.v)})}
+
+function heroIntro(){
+  const tl=gsap.timeline({defaults:{ease:'power4.out'},onComplete:setupScroll});
+  tl.fromTo('#heroBg',{scale:1.18,filter:'brightness(.4)'},{scale:1,filter:'brightness(1)',duration:2.4,ease:'expo.out'},0)
+    .from('.hero-logo',{scale:.6,opacity:0,y:-30,duration:1.2,ease:'back.out(1.6)'},.2)
+    .from('#heroTitle .ch',{yPercent:110,rotate:8,opacity:0,duration:.9,stagger:.022},.5)
+    .from('.hero-in:not(.hero-logo)',{y:30,opacity:0,duration:.9,stagger:.1},.7)
+    .from('.coin-wrap',{scale:0,opacity:0,duration:.9,stagger:.1,ease:'back.out(2)'},.9)
+    .add(()=>{$$('.bonus-panel [data-count]').forEach((n,i)=>countUp(n,i*.1));strike(true)},.9);
+}
+
+/* Storm */
+const storm=$('#storm'),sctx=storm.getContext('2d'),dust=$('#dust'),dctx=dust.getContext('2d'),fx=$('#fx'),fctx=fx.getContext('2d');
+let W=0,H=0;const DPR=Math.min(devicePixelRatio||1,2);
+function resize(){const r=$('#hero').getBoundingClientRect();W=r.width;H=r.height;[storm,dust].forEach(c=>{c.width=W*DPR;c.height=H*DPR});sctx.setTransform(DPR,0,0,DPR,0,0);dctx.setTransform(DPR,0,0,DPR,0,0);fx.width=innerWidth*DPR;fx.height=innerHeight*DPR;fctx.setTransform(DPR,0,0,DPR,0,0)}
+let bolts=[];
+function makeBolt(x1,y1,x2,y2,d,arr){if(d<4){arr.push([x1,y1,x2,y2]);return}const mx=(x1+x2)/2+(Math.random()-.5)*d,my=(y1+y2)/2+(Math.random()-.5)*d*.3;makeBolt(x1,y1,mx,my,d/2,arr);makeBolt(mx,my,x2,y2,d/2,arr);
+  if(Math.random()<.12&&d>20){const br=[];makeBolt(mx,my,mx+(Math.random()-.5)*d*2.2,my+Math.random()*d*1.5,d/2,br);arr.push(...br)}}
+function strike(big){if(reduce||document.hidden)return;const x=W*(big?.78:.35+Math.random()*.6),segs=[];
+  makeBolt(x,-10,x+(Math.random()-.5)*W*.2,H*(big?.5:.25+Math.random()*.3),big?220:150,segs);bolts.push({segs,life:1});doFlash(x/W*100);
+  if(hasGsap)gsap.fromTo('#heroBg',{filter:'brightness(1.35)'},{filter:'brightness(1)',duration:.7})}
+function drawStorm(){sctx.clearRect(0,0,W,H);bolts.forEach(b=>{sctx.lineCap='round';
+  for(const p of[[12,'rgba(120,150,255,',.3],[5,'rgba(200,220,255,',.7],[2,'rgba(255,255,255,',1]]){sctx.lineWidth=p[0];sctx.shadowBlur=p[0]*3;sctx.shadowColor='rgba(150,180,255,.9)';sctx.beginPath();b.segs.forEach(s=>{sctx.moveTo(s[0],s[1]);sctx.lineTo(s[2],s[3])});sctx.strokeStyle=p[1]+(p[2]*b.life*(Math.random()>.15?1:.3))+')';sctx.stroke()}b.life-=.035});
+  sctx.shadowBlur=0;bolts=bolts.filter(b=>b.life>0)}
+(function loop(){setTimeout(()=>{strike(false);if(Math.random()<.35)setTimeout(()=>strike(false),180);loop()},3800+Math.random()*4500)})();
+const motes=Array.from({length:70},()=>({x:Math.random(),y:Math.random(),r:.8+Math.random()*2.2,s:.0005+Math.random()*.0014,o:Math.random()*6.28}));
+function drawDust(t){dctx.clearRect(0,0,W,H);motes.forEach(m=>{m.y-=m.s;if(m.y<-.02){m.y=1.02;m.x=Math.random()}const x=m.x*W+Math.sin(t/1400+m.o)*20,y=m.y*H,a=.35+.5*Math.sin(t/600+m.o);
+  const g=dctx.createRadialGradient(x,y,0,x,y,m.r*4);g.addColorStop(0,`rgba(255,226,140,${Math.max(a,0)})`);g.addColorStop(1,'rgba(255,200,80,0)');dctx.fillStyle=g;dctx.beginPath();dctx.arc(x,y,m.r*4,0,7);dctx.fill()})}
+
+/* FX */
+let parts=[],fxOn=false;
+function burst(x,y,n=160){if(reduce)return;for(let i=0;i<n;i++){const a=Math.random()*6.28,v=6+Math.random()*12,coin=Math.random()<.55;
+  parts.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-8,rot:Math.random()*6,vr:(Math.random()-.5)*.3,s:coin?8+Math.random()*9:5+Math.random()*6,coin,c:['#f5cd63','#fff1b8','#8fd3ff','#c38e2c','#8a6bff','#ff6b8b'][i%6],life:1,ph:Math.random()*6})}
+  if(!fxOn){fxOn=true;requestAnimationFrame(drawFx)}}
+function drawFx(){fctx.clearRect(0,0,innerWidth,innerHeight);parts.forEach(p=>{p.vx*=.985;p.vy+=.32;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.ph+=.2;if(p.y>innerHeight+40)p.life=0;else if(p.vy>0)p.life-=.004;
+  fctx.save();fctx.translate(p.x,p.y);fctx.rotate(p.rot);fctx.globalAlpha=Math.max(p.life,0);
+  if(p.coin){const sx=Math.abs(Math.cos(p.ph)),g=fctx.createRadialGradient(-p.s*.3,-p.s*.3,0,0,0,p.s);g.addColorStop(0,'#fff6cf');g.addColorStop(.5,'#f2c24f');g.addColorStop(1,'#8a5c18');fctx.fillStyle=g;fctx.beginPath();fctx.ellipse(0,0,p.s*Math.max(sx,.15),p.s,0,0,7);fctx.fill()}
+  else{fctx.fillStyle=p.c;fctx.fillRect(-p.s/2,-p.s/4,p.s,p.s/2*Math.abs(Math.cos(p.ph)))}fctx.restore()});
+  parts=parts.filter(p=>p.life>0);if(parts.length)requestAnimationFrame(drawFx);else{fxOn=false;fctx.clearRect(0,0,innerWidth,innerHeight)}}
+
+resize();addEventListener('resize',()=>{resize();if(hasGsap)ScrollTrigger.refresh()});
+let heroVisible=true;new IntersectionObserver(e=>heroVisible=e[0].isIntersecting).observe($('#hero'));
+(function frame(t){if(heroVisible){drawStorm();if(!reduce)drawDust(t)}requestAnimationFrame(frame)})(0);
+
+/* Parallax + cursor */
+if(hasGsap&&!reduce){
+  const bx=gsap.quickTo('#heroBg','x',{duration:1.6,ease:'power3'}),by=gsap.quickTo('#heroBg','y',{duration:1.6,ease:'power3'});
+  const L=$$('#hero [data-depth]').map(l=>({x:gsap.quickTo(l,'x',{duration:1.2,ease:'power3'}),y:gsap.quickTo(l,'y',{duration:1.2,ease:'power3'}),d:+l.dataset.depth}));
+  addEventListener('pointermove',e=>{if(!heroVisible)return;const nx=e.clientX/innerWidth-.5,ny=e.clientY/innerHeight-.5;bx(-nx*30);by(-ny*20);L.forEach(s=>{s.x(-nx*60*s.d);s.y(-ny*40*s.d)})})}
+if(finePointer&&hasGsap&&!reduce){const c=$('#cursor'),r=$('#cursorRing');const cx=gsap.quickTo(c,'x',{duration:.08}),cy=gsap.quickTo(c,'y',{duration:.08}),rx=gsap.quickTo(r,'x',{duration:.4,ease:'power3'}),ry=gsap.quickTo(r,'y',{duration:.4,ease:'power3'});
+  addEventListener('pointermove',e=>{cx(e.clientX);cy(e.clientY);rx(e.clientX);ry(e.clientY)});
+  document.addEventListener('pointerover',e=>r.classList.toggle('hover',!!e.target.closest('a,button,.god')));
+  $$('.magnetic').forEach(b=>{const qx=gsap.quickTo(b,'x',{duration:.5,ease:'elastic.out(1,.4)'}),qy=gsap.quickTo(b,'y',{duration:.5,ease:'elastic.out(1,.4)'});
+    b.addEventListener('pointermove',e=>{const rc=b.getBoundingClientRect();qx((e.clientX-rc.left-rc.width/2)*.3);qy((e.clientY-rc.top-rc.height/2)*.4)});b.addEventListener('pointerleave',()=>{qx(0);qy(0)})})
+}else{$('#cursor').style.display=$('#cursorRing').style.display='none'}
+
+/* Ticker */
+(function(){const names=['Alex K.','Maria S.','Tomasz W.','Elena P.','Jonas M.','Sofia R.','Lukas B.','Anna D.','Marco V.','Ivy L.','Nikos A.','Clara F.'];
+  const games=['Thunder of Zeus','Poseidon\'s Depths','Hera\'s Treasury','Athena\'s Wisdom','Hades: Underworld','Apollo\'s Ascent'];
+  let h='<span class="tick"><span class="tick-label">LIVE WINS · DEMO</span></span>';for(let i=0;i<14;i++){const a=Math.random()<.2?1000+Math.random()*9000:40+Math.random()*900;h+=`<span class="tick"><i class="live"></i>${names[i%12]} won <b>€${Math.round(a).toLocaleString('en-US')}</b> on ${games[i%6]}</span>`}
+  $('#ticker').innerHTML=h+h})();
+
+/* Gods */
+const GODS=[
+  {id:'zeus',god:'King of the gods',n:'Thunder of Zeus',cat:'slots',rtp:'96.5%',m:'Multiplier bolts',b:['hot','🔥 Hot']},
+  {id:'poseidon',god:'Lord of the seas',n:'Poseidon\'s Depths',cat:'slots',rtp:'96.4%',m:'Cascading waves'},
+  {id:'athena',god:'Goddess of wisdom',n:'Athena\'s Wisdom',cat:'live',rtp:'98.6%',m:'Live blackjack',b:['live','● Live']},
+  {id:'hera',god:'Queen of Olympus',n:'Hera\'s Treasury',cat:'slots',rtp:'96.2%',m:'Hold & win',b:['hot','🔥 Hot']},
+  {id:'hades',god:'Ruler of the underworld',n:'Hades: Underworld',cat:'crash',rtp:'97.0%',m:'Mines',b:['new','✦ New']},
+  {id:'apollo',god:'God of the sun',n:'Apollo\'s Ascent',cat:'crash',rtp:'97.0%',m:'Crash',b:['new','✦ New']}];
+$('#godsGrid').innerHTML=GODS.map(g=>`<article class="god frame tilt" data-cat="${g.cat}" data-reveal tabindex="0">
+  <div class="pic"><img src="img/${g.id}.webp" alt="${g.n}">${g.b?`<span class="badge ${g.b[0]}">${g.b[1]}</span>`:''}</div>
+  <div class="info"><div class="title">${g.god}</div><h3 class="gold-text title-glow">${g.n}</h3><div class="meta"><span>RTP ${g.rtp}</span><span>•</span><span>${g.m}</span></div>
+  <button class="btn btn-gold btn-sm" data-open-modal>Play now</button></div><div class="glare"></div></article>`).join('');
+$('#medals').innerHTML=['hades','athena','zeus','poseidon','hera','apollo'].map(g=>`<img src="img/${g}.webp" alt="">`).join('');
+$$('.chip').forEach(ch=>ch.addEventListener('click',()=>{$$('.chip').forEach(c=>c.classList.toggle('active',c===ch));const f=ch.dataset.filter,cards=$$('.god');
+  cards.forEach(c=>c.classList.toggle('hide',!(f==='all'||c.dataset.cat===f)));
+  if(hasGsap&&!reduce)gsap.fromTo(cards.filter(c=>!c.classList.contains('hide')),{y:40,opacity:0,scale:.95},{y:0,opacity:1,scale:1,duration:.6,stagger:.07,ease:'power3.out'});if(hasGsap)ScrollTrigger.refresh()}));
+
+if(finePointer&&!reduce){$$('.tilt').forEach(card=>{const base=card.classList.contains('featured')?'translateY(-14px) ':'';
+  card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect(),px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;
+  card.style.transform=`${base}rotateY(${(px-.5)*12}deg) rotateX(${(.5-py)*10}deg)`;card.style.setProperty('--gx',px*100+'%');card.style.setProperty('--gy',py*100+'%')});
+  card.addEventListener('pointerleave',()=>{card.style.transition='transform .6s cubic-bezier(.2,.8,.2,1)';card.style.transform='';setTimeout(()=>card.style.transition='',600)})})}
+
+/* Wheel */
+const prizes=[{t:'50 FS',f:'url(#wA)',c:'#fff'},{t:'€10',f:'url(#wB)',c:'#fff'},{t:'200 FS',f:'url(#wC)',c:'#3a1d00'},{t:'25 FS',f:'url(#wA)',c:'#fff'},
+  {t:'€25',f:'url(#wB)',c:'#fff'},{t:'100 FS',f:'url(#wA)',c:'#fff'},{t:'€50',f:'url(#wC)',c:'#3a1d00'},{t:'75 FS',f:'url(#wB)',c:'#fff'}];
+const WIN=2;
+(function(){const g=$('#wheelRot'),R=212,cx=250,cy=250,n=prizes.length,st=360/n;
+  prizes.forEach((p,i)=>{const a0=(i*st-90)*Math.PI/180,a1=((i+1)*st-90)*Math.PI/180;
+    g.appendChild(el('path',{d:`M${cx} ${cy} L${cx+R*Math.cos(a0)} ${cy+R*Math.sin(a0)} A${R} ${R} 0 0 1 ${cx+R*Math.cos(a1)} ${cy+R*Math.sin(a1)} Z`,fill:p.f,stroke:'#e0a531','stroke-width':3}));
+    const tg=el('g',{transform:`rotate(${i*st+st/2} ${cx} ${cy})`});const tx=el('text',{x:cx,y:cy-R*.64,'text-anchor':'middle','dominant-baseline':'middle',fill:p.c,'font-family':'Cinzel','font-weight':900,'font-size':p.t.length>5?24:28,style:'paint-order:stroke',stroke:p.c==='#fff'?'rgba(10,0,40,.5)':'rgba(255,240,200,.5)','stroke-width':3});tx.textContent=p.t;tg.appendChild(tx);
+    tg.appendChild(el('path',{d:`M${cx} ${cy-R*.9} l6 9 -6 9 -6 -9z`,fill:'#ffd76a'}));g.appendChild(tg)});
+  g.appendChild(el('circle',{cx,cy,r:74,fill:'#1a0f48',stroke:'#e0a531','stroke-width':5}));
+  const b=$('#bulbs');for(let i=0;i<24;i++){const a=(i*15-90)*Math.PI/180;b.appendChild(el('circle',{cx:250+225*Math.cos(a),cy:250+225*Math.sin(a),r:6,class:'bulb'}))}})();
+const bulbs=$$('.bulb');let bt=0,bs=500;
+(function blink(){bt++;bulbs.forEach((b,i)=>{const on=(i+bt)%2;b.setAttribute('fill',on?'#fff4cc':'#7a5214');b.style.filter=on?'drop-shadow(0 0 6px #ffd25a)':'none'});setTimeout(blink,bs)})();
+let spun=false;try{spun=localStorage.getItem('pantheon_spun')==='1'}catch(e){}
+function spin(){if(spun){openModal('wheel');return}spun=true;$('#spinBtn').disabled=true;
+  const rot=$('#wheelRot'),pointer=$('#pointer'),st=360/prizes.length,target=360*7-(WIN*st+st/2)+(Math.random()*16-8);
+  if(!hasGsap||reduce){rot.setAttribute('transform',`rotate(${target} 250 250)`);win();return}
+  bs=90;let last=0;gsap.to({r:0},{r:target,duration:6,ease:'power4.out',onUpdate(){const r=this.targets()[0].r;rot.setAttribute('transform',`rotate(${r} 250 250)`);const idx=Math.floor((r+st/2)/st);if(idx!==last){last=idx;gsap.fromTo(pointer,{rotate:-22},{rotate:0,duration:.25,ease:'elastic.out(1,.4)'})}},onComplete:win})}
+function win(){bs=160;try{localStorage.setItem('pantheon_spun','1')}catch(e){}try{navigator.vibrate&&navigator.vibrate([60,40,120])}catch(e){}
+  const r=$('#wheel').getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,240);doFlash(70);setTimeout(()=>openModal('wheel'),900);setTimeout(()=>bs=500,3000)}
+$('#spinBtn').addEventListener('click',spin);
+$('#spinBtn2').addEventListener('click',()=>{$('#wheel-sec').scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});setTimeout(spin,reduce?0:700)});
+
+/* Modal */
+const modal=$('#modal');let lastFocus=null;
+function openModal(src){lastFocus=document.activeElement;const w=src==='wheel';
+  $('#modalImg').src=`img/${w?'apollo':'zeus'}.webp`;
+  $('#modalEyebrow').textContent=w?'The gods have spoken':'Welcome Pack';$('#modalTitle').textContent=w?'+200 Free Spins':'225% + 200 FS';
+  $('#modalSub').textContent=w?'Your prize is saved for 24 hours. Create an account to claim it — plus the full Welcome Pack.':'Create your account — the bonus is credited after your first deposit.';
+  modal.classList.remove('done');modal.classList.add('open');document.body.style.overflow='hidden';setTimeout(()=>$('#email').focus(),300)}
+function closeModal(){modal.classList.remove('open');document.body.style.overflow='';lastFocus&&lastFocus.focus()}
+document.addEventListener('click',e=>{if(e.target.closest('[data-open-modal]')){e.preventDefault();openModal()}if(e.target.closest('[data-close]'))closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeModal()});
+$('#regForm').addEventListener('submit',e=>{e.preventDefault();let ok=true;const em=$('#email'),pw=$('#pass');
+  const set=(i,m)=>{const f=i.closest('.field');f.classList.toggle('err',!!m);f.querySelector('.msg').textContent=m||'';if(m)ok=false};
+  set(em,/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value)?'':'Enter a valid email');set(pw,pw.value.length>=8?'':'Password needs at least 8 characters');
+  if(!ok){if(hasGsap&&!reduce)gsap.fromTo('.modal-card',{x:-10},{x:0,duration:.5,ease:'elastic.out(1,.3)'});return}
+  modal.classList.add('done');const r=$('.modal-card').getBoundingClientRect();burst(r.left+r.width/2,r.top+80,150)});
+
+/* FAQ */
+(function(){const faq=[
+  ['What is the wagering requirement?','Bonus funds and free-spin winnings must be wagered x35 within 7 days. For example, a €100 bonus needs €3,500 in bets. Max bet while wagering is €5.'],
+  ['How fast are withdrawals?','Crypto: ~15 minutes on average. E-wallets: up to 24 hours. Bank cards: 1–3 business days. We don\'t charge withdrawal fees.'],
+  ['Do I need to verify my account?','Yes, once — before your first withdrawal. Upload an ID and proof of address in Profile → Verification. Most checks are done within 24 hours.'],
+  ['What is the minimum deposit?','€20 (or equivalent) to activate each part of the Welcome Pack. Smaller deposits are accepted but don\'t trigger the bonus.'],
+  ['Can I cancel a bonus?','Yes, anytime in Profile → Bonuses. The bonus balance and winnings from it are removed; your own deposited money stays.'],
+  ['What responsible gaming tools do you have?','Deposit and loss limits, session reminders, cool-off periods from 24 hours to 6 weeks, and full self-exclusion — all in your profile, no need to contact support.']];
+  $('#faqList').innerHTML=faq.map((f,i)=>`<div class="faq-item${i?'':' open'}"><button class="faq-q" aria-expanded="${!i}" aria-controls="fa${i}">${f[0]}<span class="pm"></span></button><div class="faq-a" id="fa${i}" role="region"><div><p>${f[1]}</p></div></div></div>`).join('');
+  $$('.faq-q').forEach(q=>q.addEventListener('click',()=>{const it=q.parentElement,open=!it.classList.contains('open');$$('.faq-item').forEach(x=>{x.classList.remove('open');x.querySelector('.faq-q').setAttribute('aria-expanded','false')});if(open){it.classList.add('open');q.setAttribute('aria-expanded','true')}}))})();
+
+/* Timer */
+(function(){let end;try{end=+localStorage.getItem('pantheon_end')}catch(e){}if(!end||end<Date.now()){end=Date.now()+864e5-1e3;try{localStorage.setItem('pantheon_end',end)}catch(e){}}
+  const h=$('[data-t=h]'),m=$('[data-t=m]'),s=$('[data-t=s]');(function t(){const d=Math.max(0,end-Date.now());h.textContent=String(Math.floor(d/36e5)).padStart(2,'0');m.textContent=String(Math.floor(d%36e5/6e4)).padStart(2,'0');s.textContent=String(Math.floor(d%6e4/1e3)).padStart(2,'0');setTimeout(t,1000)})()})();
+
+const header=$('#header'),sticky=$('#stickyCta');
+addEventListener('scroll',()=>{const y=scrollY;header.classList.toggle('scrolled',y>40);sticky.classList.toggle('show',y>innerHeight*.8&&y<document.body.scrollHeight-innerHeight*1.3)},{passive:true});
+
+/* Scroll animations */
+let scrollSet=false;
+function setupScroll(){if(scrollSet)return;scrollSet=true;
+  if(!hasGsap||reduce){$$('[data-count]').forEach(n=>countUp(n));$$('.tier').forEach(t=>t.classList.add('on'));$('#pathFill').style.transform='scaleX(1)';return}
+  ScrollTrigger.batch('[data-reveal]',{start:'top 88%',onEnter:els=>gsap.to(els,{opacity:1,y:0,duration:1,stagger:.1,ease:'power3.out',overwrite:'auto'})});
+  $$('.stats [data-count]').forEach(n=>ScrollTrigger.create({trigger:n,start:'top 92%',once:true,onEnter:()=>countUp(n)}));
+  gsap.to('#heroBg',{yPercent:12,ease:'none',scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('.hero-copy',{yPercent:-20,opacity:.1,ease:'none',scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.from('.bcard .pic img',{scale:1.35,duration:1.6,stagger:.15,ease:'expo.out',scrollTrigger:{trigger:'.cards3',start:'top 80%'}});
+  gsap.fromTo('.wheel-sec',{backgroundPosition:'50% 0%'},{backgroundPosition:'50% 100%',ease:'none',scrollTrigger:{trigger:'.wheel-sec',start:'top bottom',end:'bottom top',scrub:true}});
+  gsap.from('#wheelRot',{rotation:-180,svgOrigin:'250 250',duration:2,ease:'power3.out',scrollTrigger:{trigger:'.wheel-wrap',start:'top 80%'}});
+  gsap.from('.god .pic img',{scale:1.3,duration:1.4,stagger:.08,ease:'expo.out',scrollTrigger:{trigger:'#godsGrid',start:'top 80%'}});
+  const tiers=$$('.tier');gsap.to('#pathFill',{scaleX:1,ease:'none',scrollTrigger:{trigger:'#path',start:'top 75%',end:'bottom 55%',scrub:.6,onUpdate:s=>tiers.forEach((t,i)=>t.classList.toggle('on',s.progress>=i/3-.02))}});
+  gsap.from('.tier',{y:50,opacity:0,stagger:.12,duration:.9,ease:'power3.out',scrollTrigger:{trigger:'#path',start:'top 80%'}});
+  gsap.from('#medals img',{y:60,scale:.5,opacity:0,duration:1,stagger:{each:.08,from:'center'},ease:'back.out(1.8)',scrollTrigger:{trigger:'.final',start:'top 75%'}});
+  ScrollTrigger.create({trigger:'.final',start:'top 70%',once:true,onEnter:()=>doFlash(50)});
+}
+})();
+</script>
+</body>
+</html>
